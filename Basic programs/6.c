@@ -2,7 +2,6 @@
 
 int main()
 {
-
     float feet, meter;
 
     printf("Feet: ");
