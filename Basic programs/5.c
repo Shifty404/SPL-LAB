@@ -2,20 +2,20 @@
 
 int main()
 {
-    int a, b, sumation, substraction, multiplication, modulus;
+    int number1, number2, sumation, substraction, multiplication, modulus;
     float division;
 
     printf("Number 1: ");
-    scanf(" %d", &a);
+    scanf(" %d", &number1);
 
     printf("Number 2: ");
-    scanf(" %d", &b);
+    scanf(" %d", &number2);
 
-    sumation = a + b;
-    substraction = a - b;
-    multiplication = a * b;
-    modulus = a % b;
-    division = (float)a / b;
+    sumation = number1 + number2;
+    substraction = number1 - number2;
+    multiplication = number1 * number2;
+    modulus = number1 % number2;
+    division = (float)number1 / number2;
 
     printf("Sumation = %d\n", sumation);
     printf("Substration = %d\n", substraction);

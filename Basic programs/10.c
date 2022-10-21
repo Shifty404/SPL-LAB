@@ -2,11 +2,11 @@
 
 int main()
 {
-    char c;
+    char character;
 
     printf("Character: ");
-    scanf(" %c", &c);
+    scanf(" %character", &character);
 
-    printf("ASCII: %d", c);
+    printf("ASCII: %d", character);
     return 0;
 }

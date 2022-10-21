@@ -2,7 +2,7 @@
 
 int main()
 {
-    int number1, number2, sum;
+    int number1, number2;
 
     printf("Number 1: ");
     scanf(" %d", &number1);
@@ -10,8 +10,6 @@ int main()
     printf("Number 2: ");
     scanf(" %d", &number2);
 
-    sum = number1 + number2;
-
-    printf("Total: %d", sum);
+    (number1 == number2) ? printf("Number1 and Number2 are equal!") : printf("Number1 and Number2 are not equal!");
     return 0;
 }

@@ -2,15 +2,15 @@
 
 int main()
 {
-    float a, b, total;
+    float number1, number2, total;
 
     printf("Number 1: ");
-    scanf(" %f", &a);
+    scanf(" %f", &number1);
 
     printf("Number 2: ");
-    scanf(" %f", &b);
+    scanf(" %f", &number2);
 
-    total = a * b;
+    total = number1 * number2;
 
     printf("Total: %.2f", total);
 }
