@@ -23,5 +23,6 @@ int main()
         printf("The  candidate is eligible for admission.");
     else
         printf("The candidate is not eligiblefor admission.");
+    
     return 0;
 }

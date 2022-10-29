@@ -11,5 +11,6 @@ int main()
     scanf(" %d", &number2);
 
     (number1 == number2) ? printf("Number1 and Number2 are equal!") : printf("Number1 and Number2 are not equal!");
+
     return 0;
 }

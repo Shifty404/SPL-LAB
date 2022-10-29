@@ -19,5 +19,6 @@ int main()
         printf("Number 2: %d is the largest number.", number2);
     else if (number3 >= number1 && number3 >= number2)
         printf("Number 3: %d is the largest number.", number3);
+
     return 0;
 }

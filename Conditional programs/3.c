@@ -16,5 +16,6 @@ int main()
     largeNumber = number1 >= number2 ? (number1 >= number3 ? number1 : number3) : (number2 >= number3 ? number2 : number3);
 
     printf("%d is the largest number.", largeNumber);
+
     return 0;
 }

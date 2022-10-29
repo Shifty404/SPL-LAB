@@ -11,5 +11,6 @@ int main()
         printf("Type: Even!");
     else
         printf("Type: Odd!");
+
     return 0;
 }

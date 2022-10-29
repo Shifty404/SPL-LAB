@@ -24,5 +24,6 @@ int main()
         printf("Number 2: %d is the largest number.", number2);
     else
         printf("Number 3: %d is the largest number.", number3);
+
     return 0;
 }

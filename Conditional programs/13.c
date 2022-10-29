@@ -8,5 +8,6 @@ int main()
     scanf(" %d", &age);
 
     printf("The candidate is %s for casting vote.", ((age >= 18) ? "eligible" : "not eligible"));
+
     return 0;
 }
