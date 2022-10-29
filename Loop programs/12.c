@@ -8,12 +8,13 @@ void menu()
 
 int main()
 {
-
     int choice, number, reverse = 0;
 
     printf("Enter number: ");
     scanf("%d", &number);
+
     menu();
+
     printf("Enter choice: ");
     scanf("%d", &choice);
 

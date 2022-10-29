@@ -12,9 +12,12 @@ int main()
 
     printf("Enter number: ");
     scanf("%d", &number);
+
     printf("Enter power: ");
     scanf("%d", &power);
+
     menu();
+    
     printf("Enter choice: ");
     scanf("%d", &choice);
 
