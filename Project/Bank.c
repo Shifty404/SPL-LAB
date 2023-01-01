@@ -111,7 +111,7 @@ void login()
         fscanf(file, "%i ", &c.birthday.year);
         fscanf(file, "%s ", c.email);
         fscanf(file, "%s ", c.password);
-        fscanf(file, "%i", &c.balance);
+        fscanf(file, "%i ", &c.balance);
 
         int emailcheck = strcmp(c.email, email);
         int passcheck = strcmp(c.password, pass);
@@ -265,7 +265,7 @@ void showInfo(char email[50], char pass[50])
         fscanf(file, "%i ", &c.birthday.year);
         fscanf(file, "%s ", c.email);
         fscanf(file, "%s ", c.password);
-        fscanf(file, "%i", &c.balance);
+        fscanf(file, "%i ", &c.balance);
 
         int emailcheck = strcmp(c.email, email);
         int passcheck = strcmp(c.password, pass);
