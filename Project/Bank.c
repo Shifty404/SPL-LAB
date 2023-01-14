@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-void menu();
+int menu();
 void register_();
 void login();
 void mainProgramCaling(char email[50], char pass[50]);
@@ -27,7 +27,7 @@ typedef struct customer
     int balance;
 } Customer;
 
-void menu()
+int menu()
 {
     int choice;
 
@@ -36,7 +36,8 @@ void menu()
         printf("\n*****Welcome to UBANK*****\n");
         printf("1. Login\n");
         printf("2. Register\n");
-        printf("Please enter your choice (1-2): ");
+        printf("0. Exit\n");
+        printf("Please enter your choice (0-2): ");
 
         scanf("%d", &choice);
         getchar();
@@ -50,6 +51,9 @@ void menu()
         case 2:
             register_();
             break;
+
+        case 0:
+            return 0;
 
         default:
             printf("Invalid input! Please put a valid input.\n");
@@ -348,8 +352,7 @@ void delete(char email[50], char pass[50])
 
 int main()
 {
-    menu();
-    return 0;
+    menu(); // Starting the program
 }
 
 /*
@@ -368,5 +371,5 @@ int main()
     2000
     rock@gmail.com
     rock
-    
+
 */
