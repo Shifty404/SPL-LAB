@@ -31,7 +31,7 @@ void menu()
 {
     int choice;
 
-    while (1)
+    while (1) // infinity loop
     {
         printf("\n*****Welcome to UBANK*****\n");
         printf("1. Login\n");
@@ -64,9 +64,15 @@ void register_()
     Customer c;
 
     printf("\n*****Registration*****\n");
+    printf("Enter 0 to go back.");
     printf("\nName: ");
     fgets(c.name, sizeof(c.name), stdin);
     c.name[strcspn(c.name, "\n")] = '\0';
+
+    int back = strcmp("0", c.name); // Back feature
+    if (back == 0)
+        menu();
+
     printf("\nBirthday: ");
     printf("\nBirth-day: ");
     scanf("%d", &c.birthday.day);
@@ -82,7 +88,7 @@ void register_()
 
     printf("\n");
 
-    fprintf(file, "%s %d %d %d %s %s %d\n", c.name, c.birthday.day, c.birthday.month, c.birthday.year, c.email, c.password, c.balance);
+    fprintf(file, "%s %d %d %d %s %s %d\n", c.name, c.birthday.day, c.birthday.month, c.birthday.year, c.email, c.password, c.balance); // Printing in file
 
     fclose(file);
 
@@ -95,8 +101,14 @@ void login()
     char email[50], pass[50];
 
     printf("\n*****Login*****\n");
+    printf("Enter 0 to go back.\n");
     printf("\nEmail: ");
     scanf("%s", &email);
+
+    int back = strcmp("0", email); // Back feature
+    if (back == 0)
+        menu();
+
     printf("\nPassword: ");
     scanf("%s", &pass);
     getchar();
@@ -104,7 +116,8 @@ void login()
     while (!feof(file))
     {
         Customer c;
-
+        
+        //Reading from file
         fscanf(file, "%s ", c.name);
         fscanf(file, "%i ", &c.birthday.day);
         fscanf(file, "%i ", &c.birthday.month);
@@ -121,6 +134,8 @@ void login()
             fclose(file);
             mainProgramCaling(email, pass);
         }
+        else
+            printf("\nInvalid email or password!\n");
     }
 
     fclose(file);
@@ -161,7 +176,7 @@ void mainProgramCaling(char email[50], char pass[50])
             break;
 
         case 5:
-            delete(email, pass);
+            delete (email, pass);
             break;
 
         default:
@@ -238,7 +253,18 @@ void cashOut(char email[50], char pass[50])
 
         if (emailcheck == 0 && passcheck == 0)
         {
-            c.balance -= amount;
+            if (c.balance == 0)
+            {
+                printf("\nYou have no balance in account.\n");
+                printf("Please CASH-IN some money in order to CASH-OUT.\n");
+            }
+            else if (c.balance < 0)
+            {
+                printf("\nYou are in loan.\n");
+                printf("Please CASH-IN some money in order to pay up yoor loan.\n");
+            }
+            else
+                c.balance -= amount;
             fprintf(file, "%s %d %d %d %s %s %d\n", c.name, c.birthday.day, c.birthday.month, c.birthday.year, c.email, c.password, c.balance);
         }
         else
@@ -327,6 +353,8 @@ int main()
 }
 
 /*
+    **test case **
+
     shifty
     26
     6
@@ -340,4 +368,5 @@ int main()
     2000
     rock@gmail.com
     rock
+    
 */
